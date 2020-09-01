@@ -3,8 +3,8 @@ from email.message import EmailMessage
 import smtplib
 
 def a_function():
-    ign = ['ourimbah - backup', 'Vineyard', 'Chatswood', 'Mandurah Coastal', 'Mandural South', 'Canberra',
-           'Coast Animal Health', 'IT_Test_4G_WAN1', 'IT_Test_4G_WAN2']
+    ign = ['a', 'b', 'c', 'd', 'e', 'f',
+           'g', 'h', 'i']
     # TODO implement
     region_source = 'ap-southeast-2'
     client_resource = boto3.client('ec2', region_name=region_source)
@@ -33,12 +33,12 @@ def a_function():
 
                 msg = EmailMessage()
                 msg['Subject'] = '{} VPN is Down'.format(l['Tags'][0]['Value'])
-                msg['From'] = 'frank@vet.partners'
-                msg['To'] = 'yuan.li@vet.partners', 'eddie.zhang@vet.partners', 'stephen.hunt@vet.partners'
+                msg['From'] = 'c@xxx.com.au'
+                msg['To'] = 'a@xxx.com.au'
 
                 smtpserver.ehlo()
                 smtpserver.starttls()
-                smtpserver.login('frank@vet.partners', 'Vetp5000')
+                smtpserver.login('c@xxx.com.au', 'password')
                 smtpserver.send_message(msg)
                 smtpserver.close()
 
